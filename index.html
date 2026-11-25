@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Alexandru Savinov: terminal and agent tooling and Nix configurations, in the open.">
+<meta name="color-scheme" content="light dark">
+<title>Alexandru Savinov</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <a class="brand" href="./" aria-label="Alexandru Savinov, home">
+    <svg class="mark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="1" y="1" width="8" height="22"/><rect x="11" y="1" width="12" height="10"/><rect x="11" y="13" width="12" height="10"/></svg>
+    <span>alexandru-savinov</span>
+  </a>
+  <p class="store" aria-hidden="true"><span class="store-dir">/nix/store/</span><span class="store-hash">1ab8ywgwwlhr1mld7xm3svwngp5kjf3w</span><span class="store-name">-alexandru-savinov</span></p>
+  <fieldset class="themes">
+    <legend class="sr">Colour theme</legend>
+    <label class="th th-auto"><input type="radio" name="theme" id="t-auto" checked><i aria-hidden="true"></i><span>Auto</span></label>
+    <label class="th th-paper"><input type="radio" name="theme" id="t-paper"><i aria-hidden="true"></i><span>Paper</span></label>
+    <label class="th th-tokyo"><input type="radio" name="theme" id="t-tokyo"><i aria-hidden="true"></i><span>Tokyo Night</span></label>
+    <label class="th th-gruvbox"><input type="radio" name="theme" id="t-gruvbox"><i aria-hidden="true"></i><span>Gruvbox</span></label>
+    <label class="th th-latte"><input type="radio" name="theme" id="t-latte"><i aria-hidden="true"></i><span>Latte</span></label>
+  </fieldset>
+</header>
+
+<div class="desk">
+
+  <aside class="tile side">
+    <p class="ph"><span class="pp"><span class="sym">$</span> agtermctl tree</span></p>
+    <nav aria-label="Sections">
+      <div class="ws">
+        <p class="wsn">about</p>
+        <ul>
+          <li><a href="#whoami"><span>whoami</span><i class="st st-done" aria-hidden="true"></i><span class="sr">, completed</span></a></li>
+          <li><a href="#flake"><span>flake.nix</span><i class="st st-done" aria-hidden="true"></i><span class="sr">, completed</span></a></li>
+          <li><a href="#now"><span>now</span><i class="st st-active" aria-hidden="true"></i><span class="sr">, active</span></a></li>
+        </ul>
+      </div>
+      <div class="ws">
+        <p class="wsn">projects</p>
+        <ul>
+          <li><a href="#agterm-omarchy"><span>agterm-omarchy</span><i class="st st-active" aria-hidden="true"></i><span class="sr">, active</span></a></li>
+          <li><a href="#spike-mind"><span>spike-mind</span><i class="st st-idle" aria-hidden="true"></i><span class="sr">, idle</span></a></li>
+          <li><a href="#sancta"><span>sancta</span><i class="st st-idle" aria-hidden="true"></i><span class="sr">, idle</span></a></li>
+          <li><a href="#slot"><span>open slot</span><i class="st st-blocked" aria-hidden="true"></i><span class="sr">, blocked</span></a></li>
+        </ul>
+      </div>
+      <div class="ws">
+        <p class="wsn">elsewhere</p>
+        <ul>
+          <li><a href="#links"><span>links</span><i class="st st-done" aria-hidden="true"></i><span class="sr">, completed</span></a></li>
+          <li><a href="#lock"><span>flake.lock</span><i class="st st-done" aria-hidden="true"></i><span class="sr">, completed</span></a></li>
+        </ul>
+      </div>
+    </nav>
+    <dl class="legend legend-side">
+      <div><dt><i class="st st-active" aria-hidden="true"></i>active</dt><dd>pushed this month</dd></div>
+      <div><dt><i class="st st-idle" aria-hidden="true"></i>idle</dt><dd>at rest</dd></div>
+      <div><dt><i class="st st-done" aria-hidden="true"></i>completed</dt><dd>done</dd></div>
+      <div><dt><i class="st st-blocked" aria-hidden="true"></i>blocked</dt><dd>waiting for the owner</dd></div>
+    </dl>
+  </aside>
+
+  <main id="main" class="panes">
+
+    <section class="tile focus hero" id="whoami" aria-labelledby="name">
+      <p class="ph"><span class="pp">about / <b>whoami</b></span><span class="ps"><i class="st st-done" aria-hidden="true"></i>completed</span></p>
+      <p class="ask"><span class="sym" aria-hidden="true">›</span> Who is alexandru-savinov?</p>
+      <p class="tool"><span class="tool-dot" aria-hidden="true"></span>Read 3 public repositories</p>
+      <h1 id="name">Alexandru Savinov</h1>
+      <p class="sub">Terminal and agent tooling, and machines kept in Nix. Everything linked from this page is open on GitHub.</p>
+      <p class="actions">
+        <a class="button" href="https://github.com/alexandru-savinov">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="quiet" href="#agterm-omarchy">See the projects <span aria-hidden="true">↓</span></a>
+      </p>
+    </section>
+
+    <section class="tile flake" id="flake" aria-labelledby="flake-title">
+      <p class="ph"><span class="pp">about / <b id="flake-title">flake.nix</b></span><span class="ps"><i class="st st-done" aria-hidden="true"></i>completed</span></p>
+      <pre class="nix"><code><span class="c"># How this page is put together.</span>
+{
+  <span class="k">description</span> = <span class="s">"A personal homepage"</span>;
+
+  <span class="k">inputs</span> = {
+    <span class="k">omarchy</span> = <span class="s">"tiles, a bar, palettes"</span>;
+    <span class="k">nix</span>     = <span class="s">"inputs, outputs, a lock"</span>;
+    <span class="k">agterm</span>  = <span class="s">"a tree of sessions"</span>;
+    <span class="k">claude</span>  = <span class="s">"paper, serif, calm"</span>;
+  };
+
+  <span class="k">outputs</span> = { <span class="f">self</span>, ... }: {
+    <span class="k">about</span>     = <span class="f">./whoami</span>;
+    <span class="k">projects</span>  = [
+      <span class="f">agterm-omarchy</span>
+      <span class="f">spike-mind</span> <span class="f">sancta</span>
+    ];
+    <span class="k">elsewhere</span> = <span class="f">./links</span>;
+  };
+}</code></pre>
+    </section>
+
+    <section class="tile feature" id="agterm-omarchy" aria-labelledby="agterm-title">
+      <p class="ph"><span class="pp">projects / <b>agterm-omarchy</b></span><span class="ps"><i class="st st-active" aria-hidden="true"></i>active</span></p>
+      <div class="feature-grid">
+        <div class="feature-text">
+          <h2 id="agterm-title">agterm for Omarchy</h2>
+          <p>agterm is a terminal for running many shells and coding agents side by side. It groups sessions into named workspaces and shows which agent session needs you.</p>
+          <p>This project builds and releases the native GTK4/libadwaita Linux version for Omarchy and Arch Linux, on x86_64 and aarch64, with attested releases. It is based on <a href="https://github.com/umputun/agterm">umputun/agterm</a> and <a href="https://github.com/melonamin/agterm-linux">melonamin/agterm-linux</a>.</p>
+          <p class="actions">
+            <a class="button" href="https://alexandru-savinov.github.io/agterm-omarchy/">Project page <span aria-hidden="true">↗</span></a>
+            <a class="quiet" href="https://github.com/alexandru-savinov/agterm-omarchy">Repository <span aria-hidden="true">↗</span></a>
+            <a class="quiet" href="https://github.com/alexandru-savinov/agterm-omarchy/releases/latest">Latest release <span aria-hidden="true">↗</span></a>
+          </p>
+          <p class="meta">Swift · MIT</p>
+        </div>
+        <figure>
+          <picture class="cap cap-tokyo"><source srcset="media/agterm-tokyo-night.avif" type="image/avif"><img src="media/agterm-tokyo-night.jpg" width="1440" height="900" loading="lazy" decoding="async" alt="An Omarchy desktop in the Tokyo Night theme with three tiled windows: agterm with a workspace sidebar and an editor session, a CPU monitor, and a system summary."></picture>
+          <picture class="cap cap-gruvbox"><source srcset="media/agterm-gruvbox.avif" type="image/avif"><img src="media/agterm-gruvbox.jpg" width="1440" height="900" loading="lazy" decoding="async" alt="The same Omarchy desktop in the Gruvbox theme: agterm with a workspace sidebar and an editor session, a CPU monitor, and a system summary."></picture>
+          <picture class="cap cap-latte"><source srcset="media/agterm-catppuccin-latte.avif" type="image/avif"><img src="media/agterm-catppuccin-latte.jpg" width="1440" height="900" loading="lazy" decoding="async" alt="The same Omarchy desktop in the light Catppuccin Latte theme: agterm with a workspace sidebar and an editor session, a CPU monitor, and a system summary."></picture>
+          <figcaption>agterm on Omarchy, in <span class="cap cap-tokyo">Tokyo Night</span><span class="cap cap-gruvbox">Gruvbox</span><span class="cap cap-latte">Catppuccin Latte</span>. <span class="has-only">Change the theme in the bar and the desktop follows.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="cards">
+      <article class="tile card" id="spike-mind">
+        <p class="ph"><span class="pp">projects / <b>spike-mind</b></span><span class="ps"><i class="st st-idle" aria-hidden="true"></i>idle</span></p>
+        <h3><a href="https://github.com/alexandru-savinov/spike-mind">spike-mind</a></h3>
+        <p>A LEGO SPIKE Prime robot driven by Claude over Bluetooth LE. The model calls tools such as <code>move_forward</code>, <code>turn</code> and <code>scan_surroundings</code>.</p>
+        <p class="line">Claude → Python host → BLE → SPIKE hub</p>
+        <p class="meta">Python</p>
+      </article>
+
+      <article class="tile card" id="sancta">
+        <p class="ph"><span class="pp">projects / <b>sancta</b></span><span class="ps"><i class="st st-idle" aria-hidden="true"></i>idle</span></p>
+        <h3><a href="https://github.com/alexandru-savinov/Sancta">Sancta</a></h3>
+        <p>A personal charter for a quiet, sovereign home for my digital life: the Sancta Charter, an infrastructure-as-code pledge and naming conventions, plus Windows hardening scripts from 2025.</p>
+        <p class="meta">Charter · PowerShell</p>
+      </article>
+
+      <article class="tile card slot" id="slot">
+        <p class="ph"><span class="pp">projects / <b>open slot</b></span><span class="ps"><i class="st st-blocked" aria-hidden="true"></i>blocked</span></p>
+        <p>The next project lands here.</p>
+      </article>
+    </div>
+
+    <p class="also">Also on GitHub: <a href="https://github.com/neurosnap/zmx/pulls?q=is%3Apr+author%3Aalexandru-savinov">patches sent upstream to zmx</a>.</p>
+
+    <section class="tile now" id="now" aria-labelledby="now-title">
+      <p class="ph"><span class="pp">about / <b>now</b></span><span class="ps"><i class="st st-active" aria-hidden="true"></i>active</span></p>
+      <h2 id="now-title">Now</h2>
+      <ul>
+        <li>Latest agterm for Omarchy release: <a href="https://github.com/alexandru-savinov/agterm-omarchy/releases/tag/omarchy-v0.43.0.13"><code>omarchy-v0.43.0.13</code></a>, <time datetime="2026-11-22">22 November 2026</time>.</li>
+      </ul>
+      <p class="meta">Updated <time datetime="2026-11-25">25 November 2026</time></p>
+    </section>
+
+    <section class="tile elsewhere" id="links" aria-labelledby="else-title">
+      <p class="ph"><span class="pp">elsewhere / <b>links</b></span><span class="ps"><i class="st st-done" aria-hidden="true"></i>completed</span></p>
+      <h2 id="else-title">Elsewhere</h2>
+      <ul class="links">
+        <li><span class="k">github</span> <a href="https://github.com/alexandru-savinov">alexandru-savinov</a></li>
+      </ul>
+    </section>
+
+    <footer class="tile lock" id="lock" aria-labelledby="lock-title">
+      <p class="ph"><span class="pp">elsewhere / <b id="lock-title">flake.lock</b></span><span class="ps"><i class="st st-done" aria-hidden="true"></i>completed</span></p>
+      <ul class="inputs">
+        <li><a href="https://omarchy.org">omarchy</a><span>tiles, the bar, the Tokyo Night, Gruvbox and Catppuccin Latte palettes</span></li>
+        <li><a href="https://nixos.org">nix</a><span>inputs, outputs, a store path and this lock</span></li>
+        <li><a href="https://github.com/umputun/agterm">agterm</a><span>the tree of workspaces and sessions, and the status marks</span></li>
+        <li><a href="https://claude.com">claude</a><span>warm paper, a serif voice, a question and a calm answer</span></li>
+      </ul>
+      <dl class="legend legend-lock">
+        <div><dt><i class="st st-active" aria-hidden="true"></i>active</dt><dd>pushed this month</dd></div>
+        <div><dt><i class="st st-idle" aria-hidden="true"></i>idle</dt><dd>at rest</dd></div>
+        <div><dt><i class="st st-done" aria-hidden="true"></i>completed</dt><dd>done</dd></div>
+        <div><dt><i class="st st-blocked" aria-hidden="true"></i>blocked</dt><dd>waiting for the owner</dd></div>
+      </dl>
+      <p class="fine">Style nods only: this page uses no logo or brand asset of these projects and is not endorsed by them or their makers. No scripts, no trackers, no third-party requests. The hash in the bar is derived from the SHA-256 of this page's stylesheet.</p>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
